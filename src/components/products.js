@@ -1,4 +1,4 @@
-/* import { useEffect } from "react";
+import { useEffect } from "react";
 import React, { useState } from 'react';
 import "./inventoryBalance.css"
 function Products() {
@@ -11,15 +11,10 @@ function Products() {
         .then((data) => setInventoryData(data))
         .catch((error) => console.log('Error fetching data:', error));
     };
+    fetchData()
+    /* const intervalId = setInterval(fetchData, 5000);
+    return () => clearInterval(intervalId); */
 
-    // Fetch data immediately
-    fetchData();
-
-    // Fetch data every 5 seconds
-    const intervalId = setInterval(fetchData, 5000);
-
-    // Clean up the interval when the component unmounts
-    return () => clearInterval(intervalId);
     }, []);
 
     const [inventoryData, setInventoryData] = useState([]);
@@ -56,4 +51,4 @@ function Products() {
   }
   
 
-export default Products */
+export default Products

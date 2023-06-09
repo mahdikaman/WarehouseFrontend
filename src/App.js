@@ -5,7 +5,7 @@ import { useState } from "react";
 import "./components/login.css";
 import InventoryBalance from "./components/inventoryBalance";
 import Inventory from "./components/inventory";
-/*import Products from "./components/products"; */
+import Products from "./components/products";
 function App() {
 
 const FadeUp = batch(Fade(), Move(), Sticky());
@@ -112,7 +112,7 @@ return (
     <ScrollContainer>
     <ScrollPage>
     <Animator animation={FadeUp}>
-    <div className="secondform"><InventoryBalance />ß</div>
+    <div className="secondform"><InventoryBalance /></div>
     </Animator>
     </ScrollPage>
     <ScrollPage>
@@ -132,7 +132,7 @@ return (
     </ScrollPage>
     <ScrollPage>
     <Animator animation={FadeUp}>
-    <div className="secondform">{/* <Products /> */}</div>
+    <div className="secondform"><Products /></div>
     </Animator>
     </ScrollPage>
     <ScrollPage>

@@ -4,8 +4,8 @@ import logo from "./pic/exsitec.png"
 import { useState } from "react";
 import "./components/login.css";
  import InventoryBalance from "./components/inventoryBalance";
-/*import Inventory from "./components/inventory";
-import Products from "./components/products"; */
+import Inventory from "./components/inventory";
+/*import Products from "./components/products"; */
 function App() {
 
 const FadeUp = batch(Fade(), Move(), Sticky());
@@ -122,7 +122,7 @@ return (
     </ScrollPage>
     <ScrollPage>
     <Animator animation={FadeUp}>
-    <div className="secondform">{/* <Inventory /> */}</div>
+    <div className="secondform"><Inventory /></div>
     </Animator>
     </ScrollPage>
     <ScrollPage>

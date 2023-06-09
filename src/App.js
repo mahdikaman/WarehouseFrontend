@@ -135,16 +135,6 @@ return (
     <div className="secondform"><Products /></div>
     </Animator>
     </ScrollPage>
-    <ScrollPage>
-    <Animator animation={FadeUp}>
-    <span></span>
-    </Animator>
-    </ScrollPage>
-    <ScrollPage>
-    <Animator animation={FadeUp}>
-    <div className="secondform"></div>
-    </Animator>
-    </ScrollPage>
     </ScrollContainer>
   )}
 </div>

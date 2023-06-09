@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+/* import { useEffect } from "react";
 import React, { useState } from 'react';
 import "./inventoryBalance.css"
 function Inventory() {
@@ -43,4 +43,4 @@ function Inventory() {
   }
   
 
-export default Inventory
+export default Inventory */

@@ -1,0 +1,17 @@
+.hej{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    justify-content: center;
+}
+.hejhej{
+    font-size: 20px;
+    height: 100%;
+    width: 100%;
+    border: solid black 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

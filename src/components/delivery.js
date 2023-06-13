@@ -1,14 +1,12 @@
-import { useEffect } from "react";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import "./general.css"
-function Products() {
-  
-  const [inventoryData, setInventoryData] = useState([]);
-  const [productNumber, setProductNumber] = useState('');
-  const [productName, setProductName] = useState('');
-  const [price, setPrice] = useState('');
-  const [removeItem , setRemoveItem] = useState(''); 
 
+function Delivery() {
+  const [deliveryData, setDeliveryData] = useState([]);
+  const [product, setProduct] = useState('');
+  const [destination, setDestination] = useState('');
+  const [quantity, setQuantity] = useState('');
+  const [removeItem , setRemoveItem] = useState(''); 
 
   useEffect(() => {
     fetchData();
@@ -19,9 +17,9 @@ function Products() {
   }, []);
 
   const fetchData = () => {
-    fetch('http://127.0.0.1:8000/products')
+    fetch('http://127.0.0.1:8000/delivery')
       .then((response) => response.json())
-      .then((data) => setInventoryData(data))
+      .then((data) => setDeliveryData(data))
       .catch((error) => console.error('Error:', error));
   };
 
@@ -29,12 +27,12 @@ function Products() {
     e.preventDefault();
 
     const newData = {
-      productNumber: productNumber,
-      productName: productName,
-      price: price,
+      product: product,
+      destination: destination,
+      quantity: quantity,
     };
 
-    fetch('http://127.0.0.1:8000/add/products', {
+    fetch('http://127.0.0.1:8000/add/delivery', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -51,9 +49,9 @@ function Products() {
       });
 
     // Reset form values
-    setProductNumber('');
-    setProductName('');
-    setPrice('');
+    setProduct('');
+    setDestination('');
+    setQuantity('');
   };
 
   const handleRemove = (e) => {
@@ -63,7 +61,7 @@ function Products() {
       id : removeItem
     };
 
-    fetch('http://127.0.0.1:8000/remove/products', {
+    fetch('http://127.0.0.1:8000/remove/delivery', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -82,15 +80,17 @@ function Products() {
     // Reset form values
     setRemoveItem('');
   };
+
   return (
     <>
       <div className="hej">
-      {inventoryData.map(item => (
+      {deliveryData.map(item => (
         <div key={item.ID}>
           <div className="hejhej">
-            Product: {item.ProductNumber} <br></br>
-            Name: {item.Name} <br></br>
-            Price: {item.Price}<br></br>
+            Date: {item.Date} <br></br>
+            Product: {item.Name} <br></br>
+            Destination: {item.Destination}<br></br>
+            Quantity : {item.Quantity}<br></br>
             ID : {item.ID}
             </div>
         </div>
@@ -99,23 +99,23 @@ function Products() {
       <div className="whole-form">
       <div className='add-form'>
         <form onSubmit={handleSubmit}>
-          <label>Product</label>
+          <label>Product </label>
           <input
             type="text"
-            value={productNumber}
-            onChange={(e) => setProductNumber(e.target.value)}
+            value={product}
+            onChange={(e) => setProduct(e.target.value)}
           />
-          <label>Name</label>
+          <label>Destination </label>
           <input
             type="text"
-            value={productName}
-            onChange={(e) => setProductName(e.target.value)}
+            value={destination}
+            onChange={(e) => setDestination(e.target.value)}
           />
-          <label>Price</label>
+          <label>Quantity </label>
           <input
             type="text"
-            value={price}
-            onChange={(e) => setPrice(e.target.value)}
+            value={quantity}
+            onChange={(e) => setQuantity(e.target.value)}
           />
           <div className="button-container">
             <input type="submit" value="Add" />
@@ -124,8 +124,8 @@ function Products() {
       </div>
       <div>
         <form onSubmit={handleRemove}>
-      <label>ID</label>
-          <input
+        <label>ID </label>
+        <input
             type="text"
             value={removeItem}
             onChange={(e) => setRemoveItem(e.target.value)}
@@ -138,7 +138,6 @@ function Products() {
       </div>
     </>
   );
-  }
-  
+}
 
-export default Products
+export default Delivery;

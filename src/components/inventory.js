@@ -1,12 +1,13 @@
 import { useEffect } from "react";
 import React, { useState } from 'react';
-import "./inventoryBalance.css"
+import "./general.css"
+
 function Inventory() {
   
   const [inventoryData, setInventoryData] = useState([]);
   const [inventoryNumber, setinventoryNumber] = useState('');
   const [city, setCity] = useState('');
-
+  const [removeItem , setRemoveItem] = useState(''); 
 
   useEffect(() => {
     fetchData();
@@ -52,6 +53,33 @@ function Inventory() {
     setCity('');
   };
 
+  const handleRemove = (e) => {
+    e.preventDefault();
+
+    const newData = {
+      id : removeItem
+    };
+
+    fetch('http://127.0.0.1:8000/remove/inventory', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(newData),
+    })
+      .then((response) => response.text())
+      .then((data) => {
+        console.log(data);
+        fetchData(); // Refresh the inventory data after successful insertion
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+
+    // Reset form values
+    setRemoveItem('');
+  };
+
   return (
     <>
       <div className="hej">
@@ -59,12 +87,14 @@ function Inventory() {
         <div key={item.ID}>
           <div className="hejhej">
             Inventory Number: {item.InventoryNumber} <br></br>
-            City: {item.City}
+            City: {item.City}<br></br>
+            ID : {item.ID}
           </div>
         </div>
       ))}
       </div>
-      <div>
+      <div className="whole-form">
+      <div className='add-form'>
         <form onSubmit={handleSubmit}>
           <label>Inventory Number</label>
           <input
@@ -82,6 +112,20 @@ function Inventory() {
             <input type="submit" value="Add" />
           </div>
         </form>
+      </div>
+      <div>
+        <form onSubmit={handleRemove}>
+      <label>ID</label>
+          <input
+            type="text"
+            value={removeItem}
+            onChange={(e) => setRemoveItem(e.target.value)}
+          />
+          <div className="button-container">
+            <input type="submit" value="Remove" />
+          </div>
+        </form>
+      </div>
       </div>
     </>
   );

@@ -15,3 +15,11 @@
     justify-content: center;
     align-items: center;
 }
+.whole-form{
+    display: flex;
+    border: solid black 1px;
+}
+.add-form{
+    background-color:tomato;
+    border: solid black 1px;
+}

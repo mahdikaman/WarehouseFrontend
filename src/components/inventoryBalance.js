@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import "./general.css"
 
 function Inventory() {
   const [inventoryData, setInventoryData] = useState([]);
-  const [product, setProduct] = useState('');
-  const [destination, setDestination] = useState('');
-  const [quantity, setQuantity] = useState('');
+
 
   useEffect(() => {
     fetchData();
@@ -21,36 +20,7 @@ function Inventory() {
       .catch((error) => console.error('Error:', error));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    const newData = {
-      product: product,
-      destination: destination,
-      quantity: quantity,
-    };
-
-    fetch('http://127.0.0.1:8000/add/delivery', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(newData),
-    })
-      .then((response) => response.text())
-      .then((data) => {
-        console.log(data);
-        fetchData(); // Refresh the inventory data after successful insertion
-      })
-      .catch((error) => {
-        console.error('Error:', error);
-      });
-
-    // Reset form values
-    setProduct('');
-    setDestination('');
-    setQuantity('');
-  };
+  
 
   return (
     <>
@@ -65,31 +35,7 @@ function Inventory() {
         </div>
       ))}
       </div>
-      <div>
-        <form onSubmit={handleSubmit}>
-          <label>Product </label>
-          <input
-            type="text"
-            value={product}
-            onChange={(e) => setProduct(e.target.value)}
-          />
-          <label>Destination </label>
-          <input
-            type="text"
-            value={destination}
-            onChange={(e) => setDestination(e.target.value)}
-          />
-          <label>Quantity </label>
-          <input
-            type="text"
-            value={quantity}
-            onChange={(e) => setQuantity(e.target.value)}
-          />
-          <div className="button-container">
-            <input type="submit" value="Add" />
-          </div>
-        </form>
-      </div>
+      
     </>
   );
 }

@@ -6,6 +6,7 @@ import "./components/login.css";
 import InventoryBalance from "./components/inventoryBalance";
 import Inventory from "./components/inventory";
 import Products from "./components/products";
+import Delivery from "./components/delivery";
 function App() {
 
 const FadeUp = batch(Fade(), Move(), Sticky());
@@ -133,6 +134,16 @@ return (
     <ScrollPage>
     <Animator animation={FadeUp}>
     <div className="secondform"><Products /></div>
+    </Animator>
+    </ScrollPage>
+    <ScrollPage>
+    <Animator animation={FadeUp}>
+    <span></span>
+    </Animator>
+    </ScrollPage>
+    <ScrollPage>
+    <Animator animation={FadeUp}>
+    <div className="secondform"><Delivery /></div>
     </Animator>
     </ScrollPage>
     </ScrollContainer>

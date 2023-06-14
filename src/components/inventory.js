@@ -82,12 +82,12 @@ function Inventory() {
 
   return (
     <>
-      <div className="hej">
+      <div className="content-form">
       {inventoryData.map(item => (
         <div key={item.ID}>
-          <div className="hejhej">
-            Inventory Number: {item.InventoryNumber} <br></br>
-            City: {item.City}<br></br>
+          <div className="info-form">
+            Lagernr: {item.InventoryNumber} <br></br>
+            Stad: {item.City}<br></br>
             ID : {item.ID}
           </div>
         </div>
@@ -96,13 +96,13 @@ function Inventory() {
       <div className="whole-form">
       <div className='add-form'>
         <form onSubmit={handleSubmit}>
-          <label>Inventory Number</label>
+          <label>Lagernr: </label>
           <input
             type="text"
             value={inventoryNumber}
             onChange={(e) => setinventoryNumber(e.target.value)}
           />
-          <label>City</label>
+          <label>Stad: </label>
           <input
             type="text"
             value={city}
@@ -115,7 +115,7 @@ function Inventory() {
       </div>
       <div>
         <form onSubmit={handleRemove}>
-      <label>ID</label>
+      <label>ID: </label>
           <input
             type="text"
             value={removeItem}

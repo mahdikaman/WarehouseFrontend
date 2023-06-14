@@ -7,6 +7,7 @@ import InventoryBalance from "./components/inventoryBalance";
 import Inventory from "./components/inventory";
 import Products from "./components/products";
 import Delivery from "./components/delivery";
+
 function App() {
 
 const FadeUp = batch(Fade(), Move(), Sticky());
@@ -75,7 +76,7 @@ const database = [
 return (
 <div class="container">
 
-<img onClick={()=>{setIsSubmitted(false)}} src={logo} alt="" style={{width:"10%",zIndex:"99", position : "fixed" , top: "5%" , right:"5%" }} />
+<img onClick={()=>{setIsSubmitted(false)}} src={logo} alt="" style={{width:"10%",zIndex:"99", position : "fixed" , top: "0" , right:"0" }} />
 <div class="square"></div>
      <div class="square"></div>
       <div class="square"></div>
@@ -123,7 +124,7 @@ return (
     </ScrollPage>
     <ScrollPage>
     <Animator animation={FadeUp}>
-    <div className="secondform"><Inventory /></div>
+    <div className="secondform"><Delivery /></div>
     </Animator>
     </ScrollPage>
     <ScrollPage>
@@ -143,7 +144,7 @@ return (
     </ScrollPage>
     <ScrollPage>
     <Animator animation={FadeUp}>
-    <div className="secondform"><Delivery /></div>
+    <div className="secondform"><Inventory /></div>
     </Animator>
     </ScrollPage>
     </ScrollContainer>

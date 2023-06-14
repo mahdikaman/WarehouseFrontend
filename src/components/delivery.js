@@ -83,14 +83,14 @@ function Delivery() {
 
   return (
     <>
-      <div className="hej">
+      <div className="content-form">
       {deliveryData.map(item => (
         <div key={item.ID}>
-          <div className="hejhej">
-            Date: {item.Date} <br></br>
-            Product: {item.Name} <br></br>
-            Destination: {item.Destination}<br></br>
-            Quantity : {item.Quantity}<br></br>
+          <div className="info-form">
+            Datum: {item.Date} <br></br>
+            Produkt: {item.Name} <br></br>
+            Till/Från: {item.Destination}<br></br>
+            Antal : {item.Quantity}<br></br>
             ID : {item.ID}
             </div>
         </div>
@@ -99,19 +99,19 @@ function Delivery() {
       <div className="whole-form">
       <div className='add-form'>
         <form onSubmit={handleSubmit}>
-          <label>Product </label>
+          <label>Produkt: </label>
           <input
             type="text"
             value={product}
             onChange={(e) => setProduct(e.target.value)}
           />
-          <label>Destination </label>
+          <label>Till/Från: </label>
           <input
             type="text"
             value={destination}
             onChange={(e) => setDestination(e.target.value)}
           />
-          <label>Quantity </label>
+          <label>Antal: </label>
           <input
             type="text"
             value={quantity}
@@ -124,7 +124,7 @@ function Delivery() {
       </div>
       <div>
         <form onSubmit={handleRemove}>
-        <label>ID </label>
+        <label>ID: </label>
         <input
             type="text"
             value={removeItem}

@@ -84,13 +84,13 @@ function Products() {
   };
   return (
     <>
-      <div className="hej">
+      <div className="content-form">
       {inventoryData.map(item => (
         <div key={item.ID}>
-          <div className="hejhej">
-            Product: {item.ProductNumber} <br></br>
-            Name: {item.Name} <br></br>
-            Price: {item.Price}<br></br>
+          <div className="info-form">
+            Produktnr: {item.ProductNumber} <br></br>
+            Benämning: {item.Name} <br></br>
+            Pris: {item.Price}<br></br>
             ID : {item.ID}
             </div>
         </div>
@@ -99,19 +99,19 @@ function Products() {
       <div className="whole-form">
       <div className='add-form'>
         <form onSubmit={handleSubmit}>
-          <label>Product</label>
+          <label>Produktnr: </label>
           <input
             type="text"
             value={productNumber}
             onChange={(e) => setProductNumber(e.target.value)}
           />
-          <label>Name</label>
+          <label>Benämning: </label>
           <input
             type="text"
             value={productName}
             onChange={(e) => setProductName(e.target.value)}
           />
-          <label>Price</label>
+          <label>Pris: </label>
           <input
             type="text"
             value={price}
@@ -124,7 +124,7 @@ function Products() {
       </div>
       <div>
         <form onSubmit={handleRemove}>
-      <label>ID</label>
+      <label>ID: </label>
           <input
             type="text"
             value={removeItem}

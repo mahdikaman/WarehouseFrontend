@@ -24,13 +24,13 @@ function Inventory() {
 
   return (
     <>
-      <div className="hej">
+      <div className="content-form">
       {inventoryData.map(item => (
         <div key={item.ID}>
-          <div className="hejhej">
-            Product: {item.Product} <br></br>
-            Destination: {item.destination} <br></br>
-            Sum of Quantity: {item['Sum of quantity']}
+          <div className="info-form">
+            Produkt: {item.Product} <br></br>
+            Färdigvarulager: {item.destination} <br></br>
+            Lagersaldo: {item['Sum of quantity']}
             </div>
         </div>
       ))}

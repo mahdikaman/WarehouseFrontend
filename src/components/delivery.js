@@ -16,27 +16,32 @@ function CarBooking() {
       vehicleCategory: vehicleCategory,
       rentalDateTime: rentalDateTime,
     };
-    console.log("Booking Data:", newBooking);
+    
+    // Create an array with a single booking object
+    const bookings = [newBooking];
+    
+    console.log("Booking Data:", bookings);
+    
     try {
-      const response = await fetch('your_endpoint_url', {
+      const response = await fetch('http://localhost:8080/api/bookings/create', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(newBooking), 
+        body: JSON.stringify(bookings), // Send as an array
       });
-  
+    
       if (response.ok) {
         const bookingData = await response.json();
         console.log('Booking submitted successfully:', bookingData);
-        setBookingId(bookingData.id); 
+        setBookingId(bookingData[0].id); // Assuming the response is an array with a single booking
       } else {
         console.error('Failed to submit booking:', response.statusText);
       }
     } catch (error) {
       console.error('Error submitting booking:', error.message);
     }
-  
+    
   
     setCustomerBirthdate('');
     setVehicleCategory('');
@@ -47,7 +52,7 @@ function CarBooking() {
     
     const fetchBookingData = async () => {
       try {
-        const response = await fetch('your_endpoint_url');
+        const response = await fetch('http://localhost:8080/api/bookings/all');
         if (response.ok) {
           const bookingData = await response.json();
           setBookingId(bookingData.id); 

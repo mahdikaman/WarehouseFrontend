@@ -1,12 +1,9 @@
 import { Animator, ScrollContainer, ScrollPage, batch, Fade, Move, MoveOut, Sticky, } from "react-scroll-motion";
 import React from 'react';
-import logo from "./pic/exsitec.png"
+import logo from "./pic/vgr.png"
 import { useState } from "react";
 import "./components/login.css";
-import InventoryBalance from "./components/inventoryBalance";
-import Inventory from "./components/inventory";
-import Products from "./components/products";
-import Delivery from "./components/delivery";
+import CarBooking from "./components/delivery";
 
 function App() {
 
@@ -19,10 +16,7 @@ const database = [
       username: "mahdi",
       password: "pass1"
     },
-    {
-      username: "calle",
-      password: "pass2"
-    }
+  
   ];
 
   const errors = {
@@ -67,7 +61,7 @@ const database = [
           {renderErrorMessage("pass")}
         </div>
         <div className="button-container">
-          <input type="submit" />
+          <input type="submit" value="Logga in" />
         </div>
       </form>
     </div>
@@ -76,22 +70,13 @@ const database = [
 return (
 <div class="container">
 
-<img onClick={()=>{setIsSubmitted(false)}} src={logo} alt="" style={{width:"10%",zIndex:"99", position : "fixed" , top: "0" , right:"0" }} />
-<div class="square"></div>
-     <div class="square"></div>
-      <div class="square"></div>
-       <div class="square"></div>
-        <div class="square"></div>
-         <div class="square"></div>
-          <div class="square"></div>
-           <div class="square"></div>
-            <div class="square"></div>
-             <div class="square"></div>
+<img onClick={()=>{setIsSubmitted(false)}} src={logo} alt="" style={{width:"15%",zIndex:"99", position : "fixed" , top: "0" , right:"0" }} />
+
 
 {!isSubmitted && <ScrollContainer>
   <ScrollPage>
     <Animator animation={batch(Fade(), Sticky(), MoveOut(0, -200))}>
-      <span style={{ fontSize: "40px" }}>Welcome to Exsitec</span>
+      <span style={{ fontSize: "40px" }}>Välkommen till VGR bokningssystem</span>
     </Animator>
   </ScrollPage>
   <ScrollPage>
@@ -114,37 +99,7 @@ return (
     <ScrollContainer>
     <ScrollPage>
     <Animator animation={FadeUp}>
-    <div className="secondform"><InventoryBalance /></div>
-    </Animator>
-    </ScrollPage>
-    <ScrollPage>
-    <Animator animation={FadeUp}>
-    <span></span>
-    </Animator>
-    </ScrollPage>
-    <ScrollPage>
-    <Animator animation={FadeUp}>
-    <div className="secondform"><Delivery /></div>
-    </Animator>
-    </ScrollPage>
-    <ScrollPage>
-    <Animator animation={FadeUp}>
-    <span></span>
-    </Animator>
-    </ScrollPage>
-    <ScrollPage>
-    <Animator animation={FadeUp}>
-    <div className="secondform"><Products /></div>
-    </Animator>
-    </ScrollPage>
-    <ScrollPage>
-    <Animator animation={FadeUp}>
-    <span></span>
-    </Animator>
-    </ScrollPage>
-    <ScrollPage>
-    <Animator animation={FadeUp}>
-    <div className="secondform"><Inventory /></div>
+      <div className="content-form"><CarBooking /></div>
     </Animator>
     </ScrollPage>
     </ScrollContainer>

@@ -15,7 +15,7 @@ body {
  .square{
    position: absolute;
    bottom: -100px;
-   background-color: whitesmoke;
+   background-color: darkgrey;
    animation: boxes 13s infinite ease-in-out;
  }
  
@@ -93,7 +93,7 @@ body {
    bottom: 100%;
    transform: rotate(180deg);
    opacity: 0.8;
-   background-color: whitesmoke;  
+   background-color: darkgrey;  
   }
  
    100% {bottom: -100px  }

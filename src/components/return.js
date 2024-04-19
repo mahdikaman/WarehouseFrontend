@@ -10,14 +10,12 @@ function CarUnBooking() {
   const handleBookingSubmit = async (e) => {
     e.preventDefault();
     
-  
     const newBooking = {
       bookningsId: bookningsId,
-      antalKm: antalKm,
-      dagarUthyrning: dagarUthyrning,
+      antalDagar: parseInt(dagarUthyrning, 10),
+      antalKm: parseFloat(antalKm),
     };
     
-
     const bookings = [newBooking];
     
     console.log("Booking Data:", bookings);

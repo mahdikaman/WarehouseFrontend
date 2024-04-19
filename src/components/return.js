@@ -23,7 +23,7 @@ function CarUnBooking() {
     console.log("Booking Data:", bookings);
     
     try {
-      const response = await fetch('http://localhost:8080/api/bookings/all', {
+      const response = await fetch('http://localhost:8080/api/skapa/pris', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -52,7 +52,7 @@ function CarUnBooking() {
     
     const fetchBookingData = async () => {
       try {
-        const response = await fetch('http://localhost:8080/api/bookings/create/price');
+        const response = await fetch('http://localhost:8080/api/hämta/pris');
         if (response.ok) {
           const bookingData = await response.json();
           setprice(bookingData.id); 

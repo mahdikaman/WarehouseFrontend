@@ -23,7 +23,7 @@ function CarBooking() {
     console.log("Booking Data:", bookings);
     
     try {
-      const response = await fetch('http://localhost:8080/api/bookings/create', {
+      const response = await fetch('http://localhost:8080/api/skapa/bokning', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -52,7 +52,7 @@ function CarBooking() {
     
     const fetchBookingData = async () => {
       try {
-        const response = await fetch('http://localhost:8080/api/bookings/all');
+        const response = await fetch('http://localhost:8080/api/hämta/bokning');
         if (response.ok) {
           const bookingData = await response.json();
           setBookingId(bookingData.id); 

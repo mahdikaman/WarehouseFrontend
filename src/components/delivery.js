@@ -99,10 +99,12 @@ function CarBooking() {
             </div>
           </form>
         </div>
-        {bookingId && (
+        {bookingId &&(
           <div className="whole-form">
-            Booking ID: {bookingId} 
-            Personnummer: {kundensFödelseDatum}
+            <p>Booking ID: {bookingId}</p> <br />
+            <p>Personnummer: {kundensFödelseDatum}</p> <br />
+            <p>Fordonstyp: {fordonsKategori}</p> <br />
+            <p>Datum: {uthyrningDatum}</p>
           </div>
         )}
       </div>

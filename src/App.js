@@ -71,7 +71,7 @@ const database = [
 return (
 <div class="container">
 
-<img onClick={()=>{setIsSubmitted(false)}} src={logo} alt="" style={{width:"15%",zIndex:"99", position : "fixed" , top: "0" , right:"0" }} />
+<img onClick={()=>{setIsSubmitted(false)}} src={logo} alt="" style={{width:"15%",zIndex:"99", position : "fixed" , left: "0" , right:"0" }} />
 
 
 {!isSubmitted && <ScrollContainer>

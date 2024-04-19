@@ -5,7 +5,7 @@ function CarUnBooking() {
   const [bookningsId, setbookningsId] = useState('');
   const [antalKm, setantalKm] = useState('');
   const [dagarUthyrning, setdagarUthyrning] = useState('');
-  const [bookingId, setBookingId] = useState(null);
+  const [price, setprice] = useState(null);
 
   const handleBookingSubmit = async (e) => {
     e.preventDefault();
@@ -23,7 +23,7 @@ function CarUnBooking() {
     console.log("Booking Data:", bookings);
     
     try {
-      const response = await fetch('http://localhost:8080/api/bookings/create', {
+      const response = await fetch('http://localhost:8080/api/bookings/all', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -34,7 +34,7 @@ function CarUnBooking() {
       if (response.ok) {
         const bookingData = await response.json();
         console.log('Booking submitted successfully:', bookingData);
-        setBookingId(bookingData[0].id); 
+        setprice(bookingData[0].id); 
       } else {
         console.error('Failed to submit booking:', response.statusText);
       }
@@ -52,10 +52,10 @@ function CarUnBooking() {
     
     const fetchBookingData = async () => {
       try {
-        const response = await fetch('http://localhost:8080/api/bookings/all');
+        const response = await fetch('http://localhost:8080/api/bookings/create/price');
         if (response.ok) {
           const bookingData = await response.json();
-          setBookingId(bookingData.id); 
+          setprice(bookingData.id); 
         } else {
           console.error('Failed to fetch booking data:', response.statusText);
         }
@@ -95,9 +95,9 @@ function CarUnBooking() {
             </div>
           </form>
         </div>
-        {bookingId && (
+        {price && (
           <div className="whole-form">
-            Booking ID: {bookingId}
+            Booking ID: {price}
           </div>
         )}
       </div>

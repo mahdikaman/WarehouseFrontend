@@ -1,6 +1,7 @@
 .content-form{
     color: black;
     height: 100%;
+    user-select: text;
     width: 100%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -12,7 +13,7 @@
   list-style-type: none;
   height: 100%;
   width: 100%;
-
+  user-select: text;
 }
 
 .whole-form{
@@ -20,17 +21,20 @@
     display: flex;
     width: 100%;
     height: 100%;
+    user-select: text;
 }
 .add-form{
     margin-right: 15vh;
     justify-content: space-around;
     background-color:darkgray;
+    user-select: text;
 }
 input[type="text"],
   input[type="password"] {
     height: 40px;
     width: 20vh;
     border: 1px solid rgba(0, 0, 0, 0.2);
+    user-select: text;
   }
   
   input[type="submit"] {
@@ -43,8 +47,10 @@ input[type="text"],
     border: 1px solid #01d28e;
     color: #fff;
     padding: 10px 20px;
+    user-select: text;
   }
   
   input[type="submit"]:hover {
     background: #6cf0c2;
+    user-select: text;
   }

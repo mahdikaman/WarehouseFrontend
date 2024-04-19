@@ -48,7 +48,7 @@ function CarUnBooking() {
     
     const fetchBookingData = async () => {
       try {
-        const response = await fetch('http://localhost:8080/api/hämta/pris');
+        const response = await fetch('http://localhost:8080/api/skapa/pris');
         if (response.ok) {
           const bookingData = await response.json();
           setprice(bookingData.id); 

@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import "./general.css";
 
 function CarUnBooking() {
-  const [customerBirthdate, setCustomerBirthdate] = useState('');
-  const [vehicleCategory, setVehicleCategory] = useState('');
-  const [rentalDateTime, setRentalDateTime] = useState('');
+  const [bookningsId, setbookningsId] = useState('');
+  const [antalKm, setantalKm] = useState('');
+  const [dagarUthyrning, setdagarUthyrning] = useState('');
   const [bookingId, setBookingId] = useState(null);
 
   const handleBookingSubmit = async (e) => {
@@ -12,9 +12,9 @@ function CarUnBooking() {
     
   
     const newBooking = {
-      customerBirthdate: customerBirthdate,
-      vehicleCategory: vehicleCategory,
-      rentalDateTime: rentalDateTime,
+      bookningsId: bookningsId,
+      antalKm: antalKm,
+      dagarUthyrning: dagarUthyrning,
     };
     
 
@@ -43,9 +43,9 @@ function CarUnBooking() {
     }
     
   
-    setCustomerBirthdate('');
-    setVehicleCategory('');
-    setRentalDateTime('');
+    setbookningsId('');
+    setantalKm('');
+    setdagarUthyrning('');
   };
 
   useEffect(() => {
@@ -75,13 +75,13 @@ function CarUnBooking() {
             <label>Personnummer: </label>
             <input
                type="number"
-               value={customerBirthdate}
-               onChange={(e) => setCustomerBirthdate(e.target.value)}
+               value={bookningsId}
+               onChange={(e) => setbookningsId(e.target.value)}
             />
             <label>Fordonstyp: </label>
             <select
-              value={vehicleCategory}
-              onChange={(e) => setVehicleCategory(e.target.value)}
+              value={antalKm}
+              onChange={(e) => setantalKm(e.target.value)}
             >
               <option value="">Select Category</option>
               <option value="Compact">Litet Fordon</option>
@@ -92,8 +92,8 @@ function CarUnBooking() {
             <label>Bokningsdatum: </label>
             <input
               type="datetime-local"
-              value={rentalDateTime}
-              onChange={(e) => setRentalDateTime(e.target.value)}
+              value={dagarUthyrning}
+              onChange={(e) => setdagarUthyrning(e.target.value)}
             />
             <div className="button-container">
               <input type="submit" value="Boka" />

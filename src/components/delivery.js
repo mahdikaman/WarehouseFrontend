@@ -84,9 +84,9 @@ function CarBooking() {
               onChange={(e) => setfordonsKategori(e.target.value)}
             >
               <option value="">Select Category</option>
-              <option value="Compact">Litet Fordon</option>
+              <option value="litetFordon">Litet Fordon</option>
               <option value="SUV">SUV</option>
-              <option value="Luxury">Stort Fordon</option>
+              <option value="stortFordon">Stort Fordon</option>
               <option value="minibuss">Minibuss</option>
             </select>
             <label>Bokningsdatum: </label>

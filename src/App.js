@@ -4,6 +4,7 @@ import logo from "./pic/vgr.png"
 import { useState } from "react";
 import "./components/login.css";
 import CarBooking from "./components/delivery";
+import CarUnBooking from "./components/return";
 
 function App() {
 
@@ -99,7 +100,17 @@ return (
     <ScrollContainer>
     <ScrollPage>
     <Animator animation={FadeUp}>
-      <div className="content-form"><CarBooking /></div>
+      <div className="content-form"><header>Boka din bil här</header><CarBooking /></div>
+    </Animator>
+    </ScrollPage>
+    <ScrollPage>
+    <Animator animation={FadeUp}>
+    <span></span>
+    </Animator>
+  </ScrollPage>
+  <ScrollPage>
+    <Animator animation={FadeUp}>
+      <div className="content-form"><header>Dags att lämna tillbaka bilen? </header><CarUnBooking /></div>
     </Animator>
     </ScrollPage>
     </ScrollContainer>

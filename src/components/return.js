@@ -32,7 +32,7 @@ function CarUnBooking() {
       if (response.ok) {
         const bookingData = await response.json();
         console.log('Booking submitted successfully:', bookingData);
-        setprice(bookingData[0].id); 
+        setprice(bookingData); 
       } else {
         console.error('Failed to submit booking:', response.statusText);
       }

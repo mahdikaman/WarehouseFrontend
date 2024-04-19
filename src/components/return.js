@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import "./general.css";
 
-function CarBooking() {
-  const [kundensFödelseDatum, setkundensFödelseDatum] = useState('');
-  const [fordonsKategori, setfordonsKategori] = useState('');
-  const [uthyrningDatum, setuthyrningDatum] = useState('');
+function CarUnBooking() {
+  const [customerBirthdate, setCustomerBirthdate] = useState('');
+  const [vehicleCategory, setVehicleCategory] = useState('');
+  const [rentalDateTime, setRentalDateTime] = useState('');
   const [bookingId, setBookingId] = useState(null);
 
   const handleBookingSubmit = async (e) => {
@@ -12,9 +12,9 @@ function CarBooking() {
     
   
     const newBooking = {
-      kundensFödelseDatum: kundensFödelseDatum,
-      fordonsKategori: fordonsKategori,
-      uthyrningDatum: uthyrningDatum,
+      customerBirthdate: customerBirthdate,
+      vehicleCategory: vehicleCategory,
+      rentalDateTime: rentalDateTime,
     };
     
 
@@ -43,9 +43,9 @@ function CarBooking() {
     }
     
   
-    setkundensFödelseDatum('');
-    setfordonsKategori('');
-    setuthyrningDatum('');
+    setCustomerBirthdate('');
+    setVehicleCategory('');
+    setRentalDateTime('');
   };
 
   useEffect(() => {
@@ -75,13 +75,13 @@ function CarBooking() {
             <label>Personnummer: </label>
             <input
                type="number"
-               value={kundensFödelseDatum}
-               onChange={(e) => setkundensFödelseDatum(e.target.value)}
+               value={customerBirthdate}
+               onChange={(e) => setCustomerBirthdate(e.target.value)}
             />
             <label>Fordonstyp: </label>
             <select
-              value={fordonsKategori}
-              onChange={(e) => setfordonsKategori(e.target.value)}
+              value={vehicleCategory}
+              onChange={(e) => setVehicleCategory(e.target.value)}
             >
               <option value="">Select Category</option>
               <option value="Compact">Litet Fordon</option>
@@ -92,8 +92,8 @@ function CarBooking() {
             <label>Bokningsdatum: </label>
             <input
               type="datetime-local"
-              value={uthyrningDatum}
-              onChange={(e) => setuthyrningDatum(e.target.value)}
+              value={rentalDateTime}
+              onChange={(e) => setRentalDateTime(e.target.value)}
             />
             <div className="button-container">
               <input type="submit" value="Boka" />
@@ -110,4 +110,4 @@ function CarBooking() {
   );
 }
 
-export default CarBooking;
+export default CarUnBooking;

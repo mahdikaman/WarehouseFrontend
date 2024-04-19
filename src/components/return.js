@@ -43,9 +43,7 @@ function CarUnBooking() {
     }
     
   
-    setbookningsId('');
-    setantalKm('');
-    setdagarUthyrning('');
+
   };
 
   useEffect(() => {
@@ -96,8 +94,8 @@ function CarUnBooking() {
           </form>
         </div>
         {price && (
-          <div className="whole-form">
-            Booking ID: {price}
+          <div className="kr">
+            <p>Booking ID: {price}</p>
           </div>
         )}
       </div>

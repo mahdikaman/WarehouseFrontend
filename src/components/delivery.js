@@ -42,10 +42,7 @@ function CarBooking() {
       console.error('Error submitting booking:', error.message);
     }
     
-  
-    setkundensFödelseDatum('');
-    setfordonsKategori('');
-    setuthyrningDatum('');
+
   };
 
   useEffect(() => {
@@ -100,8 +97,8 @@ function CarBooking() {
           </form>
         </div>
         {bookingId &&(
-          <div className="whole-form">
-            <p>Booking ID: {bookingId}</p> <br />
+          <div className="kr">
+            <p>BokninsID: {bookingId}</p> <br />
             <p>Personnummer: {kundensFödelseDatum}</p> <br />
             <p>Fordonstyp: {fordonsKategori}</p> <br />
             <p>Datum: {uthyrningDatum}</p>

@@ -72,31 +72,26 @@ function CarUnBooking() {
       <div className="whole-form">
         <div className='add-form'>
           <form onSubmit={handleBookingSubmit}>
-            <label>Personnummer: </label>
+            <label>BookningsID: </label>
             <input
-               type="number"
+               type="text"
                value={bookningsId}
                onChange={(e) => setbookningsId(e.target.value)}
             />
-            <label>Fordonstyp: </label>
-            <select
-              value={antalKm}
-              onChange={(e) => setantalKm(e.target.value)}
-            >
-              <option value="">Select Category</option>
-              <option value="Compact">Litet Fordon</option>
-              <option value="SUV">SUV</option>
-              <option value="Luxury">Stort Fordon</option>
-              <option value="minibuss">Minibuss</option>
-            </select>
-            <label>Bokningsdatum: </label>
+            <label>AntalKM: </label>
             <input
-              type="datetime-local"
-              value={dagarUthyrning}
-              onChange={(e) => setdagarUthyrning(e.target.value)}
+               type="number"
+               value={antalKm}
+               onChange={(e) => setantalKm(e.target.value)}
+            />
+            <label>Antal Dagar: </label>
+            <input
+               type="number"
+               value={dagarUthyrning}
+               onChange={(e) => setdagarUthyrning(e.target.value)}
             />
             <div className="button-container">
-              <input type="submit" value="Boka" />
+              <input type="submit" value="Lämna" />
             </div>
           </form>
         </div>

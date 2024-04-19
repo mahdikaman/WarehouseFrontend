@@ -84,9 +84,8 @@ function CarBooking() {
               onChange={(e) => setfordonsKategori(e.target.value)}
             >
               <option value="">Select Category</option>
-              <option value="litetFordon">Litet Fordon</option>
-              <option value="SUV">SUV</option>
-              <option value="stortFordon">Stort Fordon</option>
+              <option value="småbilar">Litet Fordon</option>
+              <option value="vans">Van</option>
               <option value="minibuss">Minibuss</option>
             </select>
             <label>Bokningsdatum: </label>
@@ -102,7 +101,8 @@ function CarBooking() {
         </div>
         {bookingId && (
           <div className="whole-form">
-            Booking ID: {bookingId}
+            Booking ID: {bookingId} 
+            Personnummer: {kundensFödelseDatum}
           </div>
         )}
       </div>
